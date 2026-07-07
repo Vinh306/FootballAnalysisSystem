@@ -1,0 +1,1 @@
+Thư mục này dùng để chứa các file track stubs (ví dụ: các file .pkl). Việc lưu trữ các stubs giúp lưu lại kết quả tracking tạm thời, tăng tốc độ cho những lần chạy sau bằng cách tải lại kết quả mà không cần track lại từ đầu.
