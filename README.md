@@ -15,11 +15,6 @@ Football Analysis System là một hệ thống phân tích trận đấu bóng 
 - **Mô hình detect cầu thủ, bóng và trọng tài**: Sử dụng mạng YOLO được huấn luyện từ tập dữ liệu (dataset) chuyên về bóng đá thu thập trên [Roboflow Universe](https://universe.roboflow.com/roboflow-jvuqo/football-players-detection-3zvbc/dataset/1) (Football Player Detection Dataset).
 - **Tải mô hình (Pretrained Weights) detect các vị trí sân (Pitch Keypoints)**: Bạn có thể tải các file weights của mô hình đã được huấn luyện sẵn trực tiếp từ [Hugging Face](https://huggingface.co/martinjolif/yolo-football-pitch-detection) và đặt vào thư mục `pitch_detector/` của dự án để sử dụng.
 
-## ⚠️ Lưu ý quan trọng
-- **Đặc điểm về vận tốc**: Hiện tại, tính toán vận tốc có thể **không chính xác khi camera di chuyển**. Điều này là do sự thay đổi góc quay, dịch chuyển và thu phóng (zoom) của camera ảnh hưởng đến việc tính toán khoảng cách pixel, khiến ước lượng khoảng cách vật lý và vận tốc trên sân không phản ánh đúng thực tế.
+## ⚠️ Lưu ý 
+- **Đặc điểm về vận tốc và khoảng cách di chuyển của cầu thủ**: Hiện tại, tính toán vận tốc có thể **không chính xác khi camera di chuyển**. Điều này là do sự thay đổi góc quay, dịch chuyển và thu phóng (zoom) của camera ảnh hưởng đến việc tính toán khoảng cách pixel, khiến ước lượng khoảng cách vật lý và vận tốc trên sân không phản ánh đúng thực tế.
 
-## Cấu trúc các thư mục quan trọng
-Dự án sử dụng các thư mục sau để quản lý I/O và dữ liệu tạm (các thư mục này đã được định nghĩa bỏ qua trong `.gitignore` ngoại trừ file hướng dẫn):
-- `input_video/`: Chứa các video gốc đầu vào cần phân tích.
-- `runs/`: Nơi xuất các video kết quả sau khi hệ thống xử lý.
-- `stubs/`: Chứa các file tracking tạm thời (`.pkl`) giúp tăng tốc cho những lần chạy sau mà không cần thực hiện track lại từ đầu.
